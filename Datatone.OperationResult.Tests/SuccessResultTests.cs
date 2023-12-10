@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace Datatone.OperationResult.Tests
 {
@@ -8,30 +9,20 @@ namespace Datatone.OperationResult.Tests
         [Test]
         public void Success_ContainCorrectAttributes()
         {
-            var result = Result.Success();
+            var result = Result.Success<Exception>();
 
             Assert.That(result, Is.Not.Null);
             Assert.That(result.IsSuccess, Is.True);
             Assert.That(result.IsError, Is.False);
-            Assert.That(result.Message, Is.Null);
+            Assert.That(result.ErrorMessage, Is.Null);
         }
 
         [Test]
         public void Success_EnsureDoesntThrow()
         {
-            var result = Result.Success();
+            var result = Result.Success<Exception>();
 
             Assert.DoesNotThrow(result.EnsureSuccess);
-        }
-
-        [Test]
-        public void SuccessWithMessage_ContainMessage()
-        {
-            const string expectedMessage = "Everything works fine!";
-
-            var result = Result.Success(expectedMessage);
-
-            Assert.That(result.Message, Is.EqualTo(expectedMessage));
         }
 
         [Test]
@@ -39,7 +30,7 @@ namespace Datatone.OperationResult.Tests
         {
             var expectedContent = new byte[] { 1, 2, 3 };
 
-            var result = Result.Success(expectedContent);
+            var result = Result.Success<byte[], Exception>(expectedContent);
 
             Assert.That(result.Content, Is.EqualTo(expectedContent));
         }

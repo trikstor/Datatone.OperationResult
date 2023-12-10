@@ -34,7 +34,7 @@ jobs:
         # NuGet package id, used for version detection & defaults to project name
         PACKAGE_NAME: Datatone.OperationResult
         # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
-        # VERSION_FILE_PATH: # optional
+        VERSION_FILE_PATH: Version.txt
         # Regex pattern to extract version info in a capturing group
         # VERSION_REGEX: # optional, default is ^\s*<Version>(.*)<\/Version>\s*$
         # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX

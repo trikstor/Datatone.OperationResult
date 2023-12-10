@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Datatone.OperationResult.Results;
+using NUnit.Framework;
 using System;
 
 namespace Datatone.OperationResult.Tests
@@ -16,7 +17,7 @@ namespace Datatone.OperationResult.Tests
             Assert.That(result, Is.Not.Null);
             Assert.That(result.IsSuccess, Is.False);
             Assert.That(result.IsError, Is.True);
-            Assert.That(result.Message, Is.EqualTo(expectedMessage));
+            Assert.That(result.ErrorMessage, Is.EqualTo(expectedMessage));
         }
 
         [Test]
@@ -38,7 +39,7 @@ namespace Datatone.OperationResult.Tests
             var result = Result.Fault(expectedType, expectedMessage);
 
             Assert.That(result.Exception, Is.Not.Null);
-            Assert.That(result.Exception.ErrorType, Is.EqualTo(expectedType));
+            Assert.That(result.Exception?.ErrorType, Is.EqualTo(expectedType));
         }
     }
 }

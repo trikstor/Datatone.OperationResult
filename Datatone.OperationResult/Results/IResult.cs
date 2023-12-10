@@ -4,7 +4,7 @@ public interface IResult
 {
     bool IsSuccess { get; }
     bool IsError { get; }
-    string? Message { get; }
+    string? ErrorMessage { get; }
 
     void EnsureSuccess();
 }

@@ -15,7 +15,17 @@
       "ProjectGuid": "c5431a9e-da6e-461c-87f7-6290d97dd8fa",
       "DisplayName": "Datatone.OperationResult.Tests",
       "ColorIndex": 1
+    },
+    "2f2fea93-c2b7-41e7-9ab3-5e775145b93f": {
+      "ProjectGuid": "2f2fea93-c2b7-41e7-9ab3-5e775145b93f",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 2
+    },
+    "386c7e29-d70f-426d-bc94-b1f8d9b1f17c": {
+      "ProjectGuid": "386c7e29-d70f-426d-bc94-b1f8d9b1f17c",
+      "DisplayName": "Datatone.OperationResult.Demo",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }
