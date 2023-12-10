@@ -1,5 +1,7 @@
 # [WIP !] Operation result boilerplate in C#
 This is an operation result pattern boilerplate tailored for use in different scenarios.
+## Stats
+![build status](https://github.com/trikstor/Datatone.OperationResult/actions/workflows/main.yml/badge.svg)
 ## What is the operation result pattern?
 This pattern is useful when you need to handle unsuccessful outcomes within your code in any other way than throwing an exception and catching it in one place. If you want to have some logic around tackling errors at different levels of your architecture or you build a library which may me used in different kinds of architectures the operation result pattern is probably the best versatile way for interfacing with your library. On the other hand, this pattern complicates the code the result operations.
 ## How to use it
