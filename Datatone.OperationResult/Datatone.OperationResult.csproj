@@ -9,7 +9,8 @@
     <Authors>Anton Zotov (trikstor)</Authors>
     <Company>Datatone</Company>
     <PackageDescription>This is an operation result pattern boilerplate tailored for use in different scenarios.</PackageDescription>
-    <PackageReadmeFile>../README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
