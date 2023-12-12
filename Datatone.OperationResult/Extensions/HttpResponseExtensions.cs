@@ -11,10 +11,10 @@ namespace Datatone.OperationResult.Extensions
         {
             if(httpResponse.IsSuccessStatusCode)
             {
-                var stringContent = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                var content = JsonSerializer.Deserialize<TContent>(stringContent);
+                using var contentStream = await httpResponse.Content.ReadAsStreamAsync().ConfigureAwait(false);
+                var content = JsonSerializer.Deserialize<TContent>(contentStream);
 
-                return Result.Success<TContent, HttpException>(content);
+                return Result.Success<TContent, HttpException>(content!);
             }
 
             if(Is500sCode(httpResponse.StatusCode))

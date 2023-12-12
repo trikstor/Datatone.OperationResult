@@ -8,6 +8,11 @@ namespace Datatone.OperationResult
             return new Result<TExException>();
         }
 
+        public static ResultT<TExContent, TExException> Success<TExContent, TExException>(TExContent content) where TExException : Exception
+        {
+            return new ResultT<TExContent, TExException>(content);
+        }
+
         public static Result<TExException> Fault<TExException>(TExException exception) where TExException : Exception
         {
             return new Result<TExException>(exception);
@@ -22,11 +27,6 @@ namespace Datatone.OperationResult
             where TErrorType : Enum
         {
             return new Result<UnifiedException<TErrorType>>(new UnifiedException<TErrorType>(errorType, errorMessage));
-        }
-
-        public static ResultT<TExContent, TExException> Success<TExContent, TExException>(TExContent content) where TExException : Exception
-        {
-            return new ResultT<TExContent, TExException>(content);
         }
 
         public static ResultT<TExContent, TExException> Fault<TExContent, TExException>(TExException exception) where TExException : Exception

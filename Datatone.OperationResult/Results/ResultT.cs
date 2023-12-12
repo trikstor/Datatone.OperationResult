@@ -1,6 +1,9 @@
-﻿namespace Datatone.OperationResult.Results;
+﻿using Datatone.OperationResult.Extensions;
 
-public class ResultT<TContent, TException> : Result<TException> where TException : Exception
+namespace Datatone.OperationResult.Results;
+
+public class ResultT<TContent, TException> : Result<TException> 
+    where TException : Exception
 {
     public TContent? Content { get; }
 
@@ -15,6 +18,18 @@ public class ResultT<TContent, TException> : Result<TException> where TException
 
     public override string? ToString()
     {
-        return IsSuccess ? $"Success: [{(Content is IEnumerable<object> collection ? string.Join(",\n", collection) : Content)}]" : $"Failure: [{ErrorMessage}]";
+        return IsSuccess ? $"Success: [{Content.ToHumanReadableString()}]" : $"Failure: [{ErrorMessage}]";
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is ResultT<TContent, TException> t &&
+               base.Equals(obj) &&
+               EqualityComparer<TContent?>.Default.Equals(Content, t.Content);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(base.GetHashCode(), Content);
     }
 }

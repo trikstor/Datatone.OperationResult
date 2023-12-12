@@ -1,6 +1,6 @@
 ﻿namespace Datatone.OperationResult.Results;
 
-public class Result<TException> : IResult where TException : Exception
+public class Result<TException> : IResult<TException> where TException : Exception
 {
     public TException? Exception { get; }
     public bool IsSuccess => Exception == null;
@@ -25,5 +25,16 @@ public class Result<TException> : IResult where TException : Exception
     public override string? ToString()
     {
         return IsSuccess ? $"Success" : $"Failure: [{ErrorMessage}]";
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is Result<TException> result &&
+               EqualityComparer<TException?>.Default.Equals(Exception, result.Exception);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Exception);
     }
 }

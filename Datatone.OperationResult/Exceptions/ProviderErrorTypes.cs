@@ -5,5 +5,6 @@ public enum ProviderErrorTypes
 {
     NotFound,
     IncorrectIdentifier,
+    Conflict,
     Unavailable,
 }
