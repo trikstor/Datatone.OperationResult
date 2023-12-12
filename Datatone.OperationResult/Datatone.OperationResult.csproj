@@ -4,9 +4,16 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Datatone.OperationResult</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Anton Zotov (trikstor)</Authors>
+    <Company>Datatone</Company>
+    <PackageDescription>This is an operation result pattern boilerplate tailored for use in different scenarios.</PackageDescription>
+    <PackageReadmeFile>../README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
     <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
   </ItemGroup>
 
