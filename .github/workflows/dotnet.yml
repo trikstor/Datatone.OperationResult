@@ -30,7 +30,5 @@ jobs:
       run: |  
           cd Datatone.OperationResult
           dotnet pack -c Release -o out
-    - name: Add private GitHub registry to NuGet
-      run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/trikstor/index.json -username trikstor -Password ${{ secrets.GITHUB_TOKEN }}
     - name: Push generated package to GitHub registry
-      run: dotnet nuget push ./Datatone.OperationResult/out/*.nupkg -s "GPR" --skip-duplicate
+      run: dotnet nuget push ./Datatone.OperationResult/out/*.nupkg -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/trikstor/index.json --skip-duplicate
