@@ -4,11 +4,18 @@
     <TargetFrameworks>net6.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <SignAssembly>False</SignAssembly>
-    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <PackageId>Datatone.OperationResult</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Anton Zotov (trikstor)</Authors>
+    <Company>Datatone</Company>
+    <PackageDescription>This is an operation result pattern boilerplate tailored for use in different scenarios.</PackageDescription>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\icon.png" Pack="true" PackagePath="\"/>
     <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
   </ItemGroup>
 
