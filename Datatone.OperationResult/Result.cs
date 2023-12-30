@@ -3,9 +3,19 @@ namespace Datatone.OperationResult
 {
     public static class Result
     {
+        public static Result<Exception> Success()
+        {
+            return new Result<Exception>();
+        }
+
         public static Result<TExException> Success<TExException>() where TExException : Exception
         {
             return new Result<TExException>();
+        }
+
+        public static ResultT<TExContent, Exception> Success<TExContent>(TExContent content)
+        {
+            return new ResultT<TExContent, Exception>(content);
         }
 
         public static ResultT<TExContent, TExException> Success<TExContent, TExException>(TExContent content) where TExException : Exception
