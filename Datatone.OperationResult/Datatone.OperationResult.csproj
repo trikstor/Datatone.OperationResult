@@ -5,17 +5,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>Datatone.OperationResult</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Anton Zotov (trikstor)</Authors>
     <Company>Datatone</Company>
     <PackageDescription>This is an operation result pattern boilerplate tailored for use in different scenarios.</PackageDescription>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
+    <Description>This is an operation result pattern boilerplate tailored for use in different scenarios.</Description>
+    <PackageProjectUrl>https://github.com/trikstor/Datatone.OperationResult</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/trikstor/Datatone.OperationResult</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md" Pack="true" PackagePath="\"/>
-    <None Include="..\icon.png" Pack="true" PackagePath="\"/>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\icon.png" Pack="true" PackagePath="\" />
     <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
   </ItemGroup>
 
